@@ -88,7 +88,7 @@ hybrid_sensors = [
     },
     {
         "register_start": 33041,
-        "poll_speed": PollSpeed.FAST,
+        "poll_speed": PollSpeed.NORMAL,
         "feature_requirement": [InverterFeature.BMS],
         "entities": [
             {"name": "Max Inverter Current", "category": Category.BASIC_INFORMATION,
