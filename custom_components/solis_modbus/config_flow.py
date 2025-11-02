@@ -19,7 +19,7 @@ CONFIG_SCHEMA = vol.Schema(
         vol.Required("host", default=""): str,
         vol.Required("port", default=502): int,
         vol.Required("slave", default=1): int,
-        vol.Optional("poll_interval_fast", default=10): vol.All(int, vol.Range(min=10)),
+        vol.Optional("poll_interval_fast", default=10): vol.All(int, vol.Range(min=3)),
         vol.Optional("poll_interval_normal", default=15): vol.All(int, vol.Range(min=15)),
         vol.Optional("poll_interval_slow", default=30): vol.All(int, vol.Range(min=30)),
         vol.Required("model", default=list(SOLIS_MODELS.keys())[0]): vol.In(SOLIS_MODELS),  # Model dropdown
@@ -36,7 +36,7 @@ CONFIG_SCHEMA = vol.Schema(
 )
 OPTIONS_SCHEMA = vol.Schema(
     {
-        vol.Required("poll_interval_fast"): vol.All(int, vol.Range(min=10)),
+        vol.Required("poll_interval_fast"): vol.All(int, vol.Range(min=3)),
         vol.Required("poll_interval_normal"): vol.All(int, vol.Range(min=15)),
         vol.Required("poll_interval_slow"): vol.All(int, vol.Range(min=30)),
         vol.Required("model"): vol.In(SOLIS_MODELS),
